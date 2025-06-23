@@ -1,0 +1,36 @@
+escolha = int(input("Escolha: 1- Valor cheio / 2- Valor por tonelada "))
+if escolha == 1:
+  Frete =  float(input("Informe o valor do frete: "))
+elif escolha == 2:
+  Valor_Tonelada = float(input("Infome o valor da tonelada: "))
+  Quantidade_Tonelada = float(input("Informe a quantidade de tonelada: "))
+  Frete = Valor_Tonelada*Quantidade_Tonelada
+else:
+  print("Escolha 1 ou 2")
+
+KM =  float(input("informe os KM:   "))
+
+escolha_media = int(input("Escolha a media: 1- Até 10ton / 2- Até 20ton / 3- Até 30ton / 4- Até 40ton"))
+if escolha_media == 1:
+  escolha_media = float(2.6)
+print(escolha_media)
+if escolha_media == 2:
+  escolha_media = float(2.3)
+if escolha_media == 3:
+  escolha_media = float(2.0)
+if escolha_media == 4:
+ escolha_media = float(1.75)
+else:
+  print("Escolha 1, 2, 3 ou 4")
+print ("A média referente a tonelada selecionada é de: ", escolha_media)
+
+Pedagio = float(input("Informe o custo do pedágio:" ))
+
+preco_diesel = float(input("Informe o valor do litro do Diesel: "))
+Combustivel = ((KM/(escolha_media))*preco_diesel)
+Combustivel = round(Combustivel, 2)
+
+print("O caminhão gastará no trajeto: ", (Combustivel)+(Pedagio))
+print("O que sobrará do frete é o valor de: ", ((Frete)-(Combustivel)-(Pedagio)))
+print("O valor que o caminhão precisa deste frete é de: ", (KM*7))
+print("A diferença do necessário para a proposta é de: ", (Frete)-(KM*7))
